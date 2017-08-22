@@ -28,11 +28,27 @@
 <template>
 <div>
   <footers></footers>
-  <div class="title">
-    <span class="friends">动态</span>
-    <router-link to="/more">
-      <span class="more">更多</span>
-    </router-link>
+  <div class="title"><span class="friends">动态</span></div>
+  <router-link to="/more"><div class="title"><span class="more">更多</span></div></router-link>
+  <div class="main">
+    <el-row>
+      <el-col :span="8">
+        <img src="../../img/qqspaceicon.png" />
+        <p class="names">好友动态</p>
+      </el-col>
+      <el-col :span="8">
+        <img src="../../img/there.png" id="there" />
+        <p class="names" style="transform: translateY(25px)">附近</p>
+      </el-col>
+      <el-col :span="8">
+        <img src="../../img/hobby.png" />
+        <p class="names">兴趣部落</p>
+      </el-col>
+    </el-row>
+  </div>
+  <div class="game">
+    <p id="mygame"><img src="../../img/game.png" />游戏</p>
+    <img src="../../img/arrow.png" id="arrow">
   </div>
 </div>
 </template>
@@ -68,5 +84,48 @@
     top: 65px;
     right: 25px;
     text-align: right;
+  }
+  .main{
+    width: 100%;
+    text-align: center;
+    height: 200px;
+    position: absolute;
+    top: 230px;
+    background-color: #F9FAFC;
+  }
+  .main img{
+    height: 110px;
+    width: 110px;
+    transform: translateY(10px)
+  }
+  #there{
+    width: 85px;
+    height: 85px;
+    transform: translateY(25px);
+  }
+  .names{
+    font-size: 30px;
+  }
+  .game{
+    position: relative;
+    top: 450px;
+    height: 100px;
+    width: 100%;
+    border-top: 1px solid #D3DCE6;
+    border-bottom: 1px solid #D3DCE6;
+  }
+  #mygame{
+    margin-left: 30px;
+  }
+  .game img{
+    transform: translateY(20px);
+    margin-right: 30px;
+  }
+  #arrow{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
   }
 </style>
