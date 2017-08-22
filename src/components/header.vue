@@ -26,13 +26,21 @@
 *     Initial: 2017/08/22       Chen Shuaikang
 */
 <template>
-<div class="head">
-  <div class="account"><img src="../img/qqhead.jpg" /></div>
+<div>
+  <div class="head">
+    <div class="account"><img src="../img/qqhead.jpg" /></div>
+  </div>
+  <div class="search">
+    <span class="search-icon"><i class="el-icon-search"></i>搜索</span>
+
+  </div>
 </div>
 </template>
 
 <script>
+  import ElIcon from '../../node_modules/element-ui/packages/icon/src/icon'
   export default {
+    components: {ElIcon},
     data () {
       return {
       }
@@ -60,5 +68,20 @@
   .account img{
     width: 75px;
     height: 75px;
+  }
+  .search{
+    width: 94%;
+    height: 50px;
+    border-radius: 10px;
+    position: absolute;
+    top: 160px;
+    left: 3%;
+    text-align: center;
+    background-color: #EFF2F7;
+  }
+  .search-icon{
+    font-size: 30px;
+    line-height: 50px;
+    color: #8492A6;
   }
 </style>
