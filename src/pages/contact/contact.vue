@@ -36,11 +36,11 @@
     <p class="new-friends"><span class="one">新朋友</span></p>
     <div class="line1"></div>
     <div class="mains">
-      <div>好友</div>
-      <div>群</div>
-      <div>多人聊天</div>
-      <div>设备</div>
-      <div>通讯录</div>
+      <router-link to="/friend"><div v-bind:class="{select:mains[0].change}" @click="changed(0)">好友</div></router-link>
+      <router-link to="/group"><div v-bind:class="{select:mains[1].change}" @click="changed(1)">群</div></router-link>
+      <router-link to="/ourchat"><div v-bind:class="{select:mains[2].change}" @click="changed(2)">多人聊天</div></router-link>
+      <router-link to="/myphone"><div v-bind:class="{select:mains[3].change}" @click="changed(3)">设备</div></router-link>
+      <router-link to="/mynotes"><div v-bind:class="{select:mains[4].change}" @click="changed(4)">通讯录</div></router-link>
     </div>
     <div class="line2"></div>
   </div>
@@ -55,7 +55,26 @@
     },
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        mains: [{
+          change: true
+        }, {
+          change: false
+        }, {
+          change: false
+        }, {
+          change: false
+        }, {
+          change: false
+        }
+        ]
+      }
+    },
+    methods: {
+      changed (num) {
+        for (let i = 0; i < 5; i++) {
+          this.mains[i].change = false
+        }
+        this.mains[num].change = true
       }
     }
   }
@@ -111,5 +130,8 @@
     margin-left: 50px;
     line-height: 100px;
     display: inline-block;
+  }
+  .select{
+    border-bottom: 5px solid #1D8CE0;
   }
 </style>
