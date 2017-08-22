@@ -33,25 +33,40 @@
     <span class="add">添加</span>
   </div>
   <div class="contact">
-    <p class="new-friends"><span class="one">新朋友</span></p>
+    <p class="new-friends"><span class="one">新朋友</span><img src="../../img/arrow.png" id="arrow1"></p>
     <div class="line1"></div>
     <div class="mains">
-      <router-link to="/friend"><div v-bind:class="{select:mains[0].change}" @click="changed(0)">好友</div></router-link>
-      <router-link to="/group"><div v-bind:class="{select:mains[1].change}" @click="changed(1)">群</div></router-link>
-      <router-link to="/ourchat"><div v-bind:class="{select:mains[2].change}" @click="changed(2)">多人聊天</div></router-link>
-      <router-link to="/myphone"><div v-bind:class="{select:mains[3].change}" @click="changed(3)">设备</div></router-link>
-      <router-link to="/mynotes"><div v-bind:class="{select:mains[4].change}" @click="changed(4)">通讯录</div></router-link>
+      <div v-bind:class="{select:mains[0].change}" @click="changed(0)">好友</div>
+      <div v-bind:class="{select:mains[1].change}" @click="changed(1)">群</div>
+      <div v-bind:class="{select:mains[2].change}" @click="changed(2)">多人聊天</div>
+      <div v-bind:class="{select:mains[3].change}" @click="changed(3)">设备</div>
+      <div v-bind:class="{select:mains[4].change}" @click="changed(4)">通讯录</div>
     </div>
     <div class="line2"></div>
+    <friend v-if="mains[0].change"></friend>
+    <group v-if="mains[1].change"></group>
+    <ourchat v-if="mains[2].change"></ourchat>
+    <myphone v-if="mains[3].change"></myphone>
+    <mynotes v-if="mains[4].change"></mynotes>
   </div>
 </div>
 </template>
 
 <script>
   import footers from '../../components/footer.vue'
+  import friend from './friends.vue'
+  import group from './group.vue'
+  import ourchat from './ourchat.vue'
+  import myphone from './myphone.vue'
+  import mynotes from './mynotes.vue'
   export default {
     components: {
-      footers
+      footers,
+      friend,
+      group,
+      ourchat,
+      myphone,
+      mynotes
     },
     data () {
       return {
@@ -123,6 +138,8 @@
   }
   .mains{
     margin-top: 15px;
+    color: #8492A6;
+    box-sizing: border-box;
   }
   .mains div{
     font-size: 35px;
@@ -132,6 +149,14 @@
     display: inline-block;
   }
   .select{
-    border-bottom: 5px solid #1D8CE0;
+    border-bottom: 6px solid #1D8CE0;
+    color: #1D8CE0;
+  }
+  #arrow1{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 25px;
+    right: 35px;
   }
 </style>
