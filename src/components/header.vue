@@ -74,7 +74,7 @@
     height: 50px;
     border-radius: 10px;
     position: absolute;
-    top: 160px;
+    top: 165px;
     left: 3%;
     text-align: center;
     background-color: #EFF2F7;
