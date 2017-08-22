@@ -29,7 +29,7 @@
   <div>
     <div class="title">
       <span class="more">更多</span>
-      <router-link to="/qqspace">
+      <router-link to="/space">
         <span class="friends">动态</span>
       </router-link>
     </div>
