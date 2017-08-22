@@ -30,7 +30,19 @@
   <footers></footers>
   <div class="title">
     <span class="friends">联系人</span>
-    <span class="new-friends">添加</span>
+    <span class="add">添加</span>
+  </div>
+  <div class="contact">
+    <p class="new-friends"><span class="one">新朋友</span></p>
+    <div class="line1"></div>
+    <div class="mains">
+      <div>好友</div>
+      <div>群</div>
+      <div>多人聊天</div>
+      <div>设备</div>
+      <div>通讯录</div>
+    </div>
+    <div class="line2"></div>
   </div>
 </div>
 </template>
@@ -56,15 +68,48 @@
     font-size: 40px;
     width: 100%;
   }
-  .friends {
+  .friends{
     position: fixed;
     top: 65px;
     text-align: center;
   }
-  .new-friends{
+  .add{
     position: fixed;
     top: 65px;
     right: 25px;
     text-align: right;
+  }
+  .contact{
+    position: relative;
+    top: 230px;
+    width: 100%;
+  }
+  .new-friends{
+    border: 1px solid #D3DCE6;
+    border-left: none;
+    border-right: none;
+    height: 100px;
+    font-size: 40px;
+    line-height: 100px;
+  }
+  .one{
+    margin-left: 30px;
+  }
+  .line1{
+    border-bottom: 1px solid #D3DCE6;
+    margin-top: 25px;
+  }
+  .line2{
+    border-bottom: 1px solid #D3DCE6;
+  }
+  .mains{
+    margin-top: 15px;
+  }
+  .mains div{
+    font-size: 35px;
+    height: 100px;
+    margin-left: 50px;
+    line-height: 100px;
+    display: inline-block;
   }
 </style>
