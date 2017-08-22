@@ -26,39 +26,47 @@
 *     Initial: 2017/08/22       Chen Shuaikang
 */
 <template>
-<div class="head">
-  <div class="account"><img src="../img/qqhead.jpg" /></div>
+<div>
+  <footers></footers>
+  <div class="title">
+    <span class="friends">动态</span>
+    <router-link to="/more">
+      <span class="more">更多</span>
+    </router-link>
+  </div>
 </div>
 </template>
 
 <script>
+  import footers from '../../components/footer.vue'
   export default {
+    components: {
+      footers
+    },
     data () {
       return {
+        msg: 'Welcome to Your Vue.js App'
       }
     }
   }
 </script>
 
 <style scoped>
-.head{
-  background-color: #20A0FF;
-  width: 100%;
-  height: 150px;
-  position: fixed;
-  top: 0;
-}
-  .account{
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: absolute;
-    left: 25px;
-    top: 50px;
+  .title span{
+    color: #fff;
+    font-family: PingFang SC;
+    font-size: 40px;
+    width: 100%;
   }
-  .account img{
-    width: 75px;
-    height: 75px;
+  .friends {
+    position: fixed;
+    top: 65px;
+    text-align: center;
+  }
+  .more{
+    position: fixed;
+    top: 65px;
+    right: 25px;
+    text-align: right;
   }
 </style>
