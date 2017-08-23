@@ -30,14 +30,18 @@
     <div class="title">
       <span class="more">更多</span>
       <router-link to="/space">
-        <span class="friends">动态</span>
+        <div class="friends">
+          <img src="../../img/arrowleft.png" class="arrowleft" />
+          <p id="dyna">动态</p>
+        </div>
       </router-link>
     </div>
     <div class="objects">
       <ul>
-        <li class="list-title">已关闭的功能</li>
-        <li v-for="list in lists">
-          <div></div>
+        <li style="background-color: #F9FAFC"><span class="list-title">已关闭的功能</span></li>
+        <li v-for="(value, index) in values">
+          <img :src="values[index].img" class="imgname" />
+          <p class="names">{{values[index].title}}</p>
         </li>
       </ul>
     </div>
@@ -48,8 +52,30 @@
   export default {
     data () {
       return {
-        lists: [{
-          value: '日迹'
+        values: [{
+          title: '日迹',
+          img: require('../../img/date.png')
+        }, {
+          title: '看点',
+          img: require('../../img/seedian.png')
+        }, {
+          title: '京东购物',
+          img: require('../../img/jd.png')
+        }, {
+          title: '阅读',
+          img: require('../../img/read.png')
+        }, {
+          title: '动漫',
+          img: require('../../img/dongman.png')
+        }, {
+          title: '直播',
+          img: require('../../img/zhibo.png')
+        }, {
+          title: '吃喝玩乐',
+          img: require('../../img/eat.png')
+        }, {
+          title: '同城服务',
+          img: require('../../img/cityfuwu.png')
         }]
       }
     }
@@ -67,8 +93,13 @@
   .title span{
     color: #fff;
     font-family: PingFang SC;
-    font-size: 40px;
-    width: 100%;
+    position: fixed;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .arrowleft{
+    transform: translate(-30px);
   }
   .more {
     position: fixed;
@@ -79,6 +110,34 @@
     position: fixed;
     top: 65px;
     left: 25px;
-    text-align: left;
+  }
+  #dyna{
+    color: #fff;
+    position: fixed;
+    top: 75px;
+    margin-left: 20px;
+  }
+  .objects{
+    width: 100%;
+    position: absolute;
+    top: 150px;
+  }
+  .objects li{
+    border-bottom: 1px solid #D3DCE6;
+    height: 100px;
+    line-height: 100px;
+  }
+  .list-title{
+    color: #8492A6;
+    font-size: 30px;
+    margin-left: 25px;
+  }
+  .imgname{
+    margin-left: 25px;
+    margin-right: 20px;
+    transform: translateY(15px);
+  }
+  .names{
+    display: inline-block;
   }
 </style>
