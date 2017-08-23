@@ -26,10 +26,8 @@
 *     Initial: 2017/08/22       Chen Shuaikang
 */
 <template>
-<div>
-  <div class="head">
-    <div class="account"><img src="../img/qqhead.jpg" /></div>
-  </div>
+<div class="head">
+  <div class="account"><img src="../img/qqhead.jpg" /></div>
   <div class="search">
     <span class="search-icon"><i class="el-icon-search" style="margin-top: 5px"></i>搜索</span>
   </div>
@@ -54,6 +52,7 @@
   height: 150px;
   position: fixed;
   top: 0;
+  z-index: 99;
 }
   .account{
     width: 75px;

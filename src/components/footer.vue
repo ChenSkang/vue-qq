@@ -92,9 +92,11 @@
   width: 100%;
   height: 120px;
   box-sizing: border-box;
+  background-color: #fff;
   border-top: 1px solid #8a8a8a;
   position: fixed;
   bottom: 0;
+  z-index: 999;
 }
   .foot-icons{
     text-align: center;
