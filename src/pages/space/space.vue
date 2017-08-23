@@ -72,12 +72,12 @@
     color: #fff;
     font-family: PingFang SC;
     font-size: 40px;
-    width: 100%;
   }
   .friends {
     position: fixed;
     top: 65px;
-    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .more{
     position: fixed;
@@ -111,6 +111,7 @@
     top: 450px;
     height: 100px;
     width: 100%;
+    background-color: #F9FAFC;
     border-top: 1px solid #D3DCE6;
     border-bottom: 1px solid #D3DCE6;
   }
