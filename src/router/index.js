@@ -5,6 +5,8 @@ import Message from '@/pages/message/message'
 import Contact from '@/pages/contact/contact'
 import Space from '@/pages/space/space'
 import More from '@/pages/space/more'
+import Chat from '@/pages/chat/chat'
+import User from '@/pages/users/users'
 
 Vue.use(Router)
 
@@ -29,6 +31,14 @@ export default new Router({
     {
       path: '/more',
       component: More
+    },
+    {
+      path: '/chat',
+      component: Chat
+    },
+    {
+      path: '/user',
+      component: User
     }
   ]
 })
