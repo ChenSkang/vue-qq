@@ -37,11 +37,23 @@
     </router-link>
   </div>
   <div class="user-message">
-    <div class="user-head">
-
+    <div>
+      <img :src="userhead" class="user-head"/>
     </div>
     <p class="user-name">{{username}}</p>
     <p class="user-style">{{styles}}</p>
+  </div>
+  <div class="footer">
+    <el-row>
+      <el-col :span="12">
+        <el-button class="footer-btn">QQ电话</el-button>
+      </el-col>
+      <el-col :span="12">
+        <router-link to="/chat">
+          <el-button type="primary" class="footer-btn">发消息</el-button>
+        </router-link>
+      </el-col>
+    </el-row>
   </div>
 </div>
 </template>
@@ -51,12 +63,14 @@
   export default {
     data () {
       return {
+        userhead: '',
         username: '',
         styles: ''
       }
     },
     mounted () {
-      bus.$on('looks', (title, style) => {
+      bus.$on('looks', (imgSrc, title, style) => {
+        this.userhead = imgSrc
         this.username = title
         this.styles = style
       })
@@ -68,10 +82,10 @@
   .title{
     width: 100%;
     position: fixed;
-    top: 0;
   }
   .back{
     width: 100%;
+    height: 500px;
     z-index: -1;
   }
   .title span{
@@ -98,7 +112,36 @@
   }
   .user-message{
     width: 100%;
-    height: 300px;
-    background-color: #1c8de0;
+    text-align: center;
+  }
+  .user-head{
+    width: 200px;
+    height: 200px;
+    margin-top: -110px;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+  .user-name{
+    margin-top: -10px;
+    font-family: 黑体;
+  }
+  .user-style{
+    margin-top: 10px;
+    font-size: 30px;
+    color: #8492A6;
+  }
+  .footer{
+    width: 100%;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #8492A6;
+  }
+  .footer-btn{
+    width: 350px;
+    height: 80px;
+    border: 1px solid #8492A6;
   }
 </style>
