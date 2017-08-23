@@ -90,32 +90,22 @@
     position: fixed;
     top: 0;
   }
-  .title span{
-    color: #fff;
-    font-family: PingFang SC;
-    position: fixed;
-    top: 75px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
   .arrowleft{
-    transform: translate(-30px);
+    position: absolute;
+    top: 55px;
   }
   .more {
     position: fixed;
+    left: 50%;
     top: 65px;
-    text-align: center;
-  }
-  .friends{
-    position: fixed;
-    top: 65px;
-    left: 25px;
+    transform: translateX(-50%);
+    color: #fff;
   }
   #dyna{
     color: #fff;
     position: fixed;
-    top: 75px;
-    margin-left: 30px;
+    top: 65px;
+    margin-left: 60px;
   }
   .objects{
     width: 100%;
