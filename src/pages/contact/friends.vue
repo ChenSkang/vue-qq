@@ -33,11 +33,13 @@
   </div>
   <div class="users" v-if="showone">
     <ul>
-      <li v-for="(user, index) in vipusers">
-        <img :src="users[index].userhead" class="userhead" />
-        <p class="username">{{vipusers[index].username}}</p>
-        <p class="styles">{{vipusers[index].styles}}</p>
-      </li>
+      <router-link to="/user">
+        <li v-for="(user, index) in vipusers" @click="lookr(index)">
+          <img :src="users[index].userhead" class="userhead" />
+          <p class="username">{{vipusers[index].username}}</p>
+          <p class="styles">{{vipusers[index].styles}}</p>
+        </li>
+      </router-link>
     </ul>
   </div>
   <div class="people" style="position: relative;margin-top: 20px">
@@ -73,6 +75,10 @@
           userhead: require('../../img/snake.png'),
           username: '神龙',
           styles: '收集七龙珠跟我聊天'
+        }, {
+          userhead: require('../../img/qilongzhu.png'),
+          username: '七龙珠',
+          styles: '我就是七龙珠'
         }],
         vipusers: [{
           userhead: require('../../img/bigwhite.png'),
@@ -87,6 +93,12 @@
         let title = this.users[index].username
         let style = this.users[index].styles
         bus.$emit('looks', imgSrc, title, style)
+      },
+      lookr (index) {
+        let imgSrcs = this.vipusers[index].userhead
+        let titles = this.vipusers[index].username
+        let styles = this.vipusers[index].styles
+        bus.$emit('lookss', imgSrcs, titles, styles)
       }
     }
   }
