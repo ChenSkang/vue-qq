@@ -115,7 +115,7 @@
     color: #fff;
     position: fixed;
     top: 75px;
-    margin-left: 20px;
+    margin-left: 30px;
   }
   .objects{
     width: 100%;
