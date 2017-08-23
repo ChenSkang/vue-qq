@@ -12,10 +12,19 @@
 </template>
 
 <script>
+  import bus from '../../assets/bus'
   export default {
     data () {
       return {
+        username: ''
       }
+    },
+    mounted () {
+      bus.$on('looks', (imgSrc, title, style) => {
+        this.userhead = imgSrc
+        this.username = title
+        this.styles = style
+      })
     }
   }
 </script>
