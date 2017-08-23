@@ -33,7 +33,9 @@
     <span class="add">添加</span>
   </div>
   <div class="contact">
-    <p class="new-friends"><span class="one">新朋友</span><img src="../../img/arrow.png" id="arrow1"></p>
+    <router-link to="/newfriend">
+      <p class="new-friends"><span class="one">新朋友</span><img src="../../img/arrow.png" id="arrow1"></p>
+    </router-link>
     <div class="line1"></div>
     <div class="mains">
       <div v-bind:class="{select:mains[0].change}" @click="changed(0)">好友</div>
@@ -101,6 +103,7 @@
     font-family: PingFang SC;
     font-size: 40px;
     width: 100%;
+    z-index: 999;
   }
   .friends{
     position: fixed;
@@ -128,6 +131,7 @@
   }
   .one{
     margin-left: 30px;
+    color: black;
   }
   .line1{
     border-bottom: 1px solid #D3DCE6;
