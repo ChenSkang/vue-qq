@@ -48,7 +48,16 @@
   </div>
   <div class="game">
     <p id="mygame"><img src="../../img/game.png" />游戏</p>
-    <img src="../../img/arrow.png" id="arrow">
+    <img src="../../img/arrow.png" class="arrow" />
+  </div>
+  <div class="sports">
+    <ul>
+      <li v-for="(value, index) in values">
+        <img :src="values[index].img" class="imgname" />
+        <p class="name">{{values[index].title}}</p>
+        <img src="../../img/arrow.png" class="arrows"/>
+      </li>
+    </ul>
   </div>
 </div>
 </template>
@@ -61,7 +70,13 @@
     },
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        values: [{
+          title: '运动',
+          img: require('../../img/sport.png')
+        }, {
+          title: '音乐',
+          img: require('../../img/seedian.png')
+        }]
       }
     }
   }
@@ -108,7 +123,7 @@
   }
   .game{
     position: relative;
-    top: 450px;
+    top: 460px;
     height: 100px;
     width: 100%;
     background-color: #F9FAFC;
@@ -122,11 +137,40 @@
     transform: translateY(20px);
     margin-right: 30px;
   }
-  #arrow{
+  .arrow{
     width: 50px;
     height: 50px;
     position: absolute;
     right: 30px;
     top: 10px;
+  }
+  .sports{
+    position: absolute;
+    top: 600px;
+    width: 100%;
+    border-top: 1px solid #C0CCDA;
+  }
+  .sports li{
+    border-bottom: 1px solid #C0CCDA;
+    height: 100px;
+    line-height: 100px;
+    background-color: #F9FAFC;
+    position: relative;
+  }
+  .arrows{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 55px;
+    top: 15px;
+    transform: translateY(10px);
+  }
+  .imgname{
+    margin-left: 25px;
+    margin-right: 20px;
+    transform: translateY(15px);
+  }
+  .name{
+    display: inline-block;
   }
 </style>

@@ -31,8 +31,7 @@
     <div class="account"><img src="../img/qqhead.jpg" /></div>
   </div>
   <div class="search">
-    <span class="search-icon"><i class="el-icon-search"></i>搜索</span>
-
+    <span class="search-icon"><i class="el-icon-search" style="margin-top: 5px"></i>搜索</span>
   </div>
 </div>
 </template>
