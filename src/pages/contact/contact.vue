@@ -46,8 +46,8 @@
     <friend v-if="mains[0].change"></friend>
     <group v-if="mains[1].change"></group>
     <ourchat v-if="mains[2].change"></ourchat>
-    <myphone v-if="mains[3].change"></myphone>
-    <mynotes v-if="mains[4].change"></mynotes>
+    <phone v-if="mains[3].change"></phone>
+    <notes v-if="mains[4].change"></notes>
   </div>
 </div>
 </template>
@@ -57,16 +57,16 @@
   import friend from './friends.vue'
   import group from './group.vue'
   import ourchat from './ourchat.vue'
-  import myphone from './myphone.vue'
-  import mynotes from './mynotes.vue'
+  import phone from './phone.vue'
+  import notes from './notes.vue'
   export default {
     components: {
       footers,
       friend,
       group,
       ourchat,
-      myphone,
-      mynotes
+      phone,
+      notes
     },
     data () {
       return {
