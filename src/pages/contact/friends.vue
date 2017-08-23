@@ -40,7 +40,7 @@
       </li>
     </ul>
   </div>
-  <div class="people" style="position: relative;">
+  <div class="people" style="position: relative;margin-top: 20px">
     <p @click="showtwo = !showtwo"><img src="../../img/arrow.png"  class="arrow" v-bind:class="{open:showtwo}"/><span>我的好友</span></p>
     <span class="peoples">{{users.length}}</span>
   </div>
@@ -83,9 +83,10 @@
     },
     methods: {
       look (index) {
+        let imgSrc = this.users[index].userhead
         let title = this.users[index].username
         let style = this.users[index].styles
-        bus.$emit('looks', title, style)
+        bus.$emit('looks', imgSrc, title, style)
       }
     }
   }
@@ -134,6 +135,8 @@
     transform: translateY(20px);
     margin-left: 25px;
     margin-right: 25px;
+    border-radius: 50%;
+    background-color: #fff;
   }
   .users p{
     margin-left: 120px;
