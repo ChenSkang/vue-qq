@@ -7,6 +7,7 @@ import Space from '@/pages/space/space'
 import More from '@/pages/space/more'
 import Chat from '@/pages/chat/chat'
 import User from '@/pages/users/users'
+import Newfriend from '@/pages/newfriends/newfriends'
 
 Vue.use(Router)
 
@@ -39,6 +40,10 @@ export default new Router({
     {
       path: '/user',
       component: User
+    },
+    {
+      path: '/newfriend',
+      component: Newfriend
     }
   ]
 })

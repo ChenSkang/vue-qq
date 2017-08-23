@@ -74,6 +74,11 @@
         this.username = title
         this.styles = style
       })
+      bus.$on('lookss', (imgSrcs, titles, styles) => {
+        this.userhead = imgSrcs
+        this.username = titles
+        this.styles = styles
+      })
     }
   }
 </script>

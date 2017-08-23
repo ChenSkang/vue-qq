@@ -83,22 +83,21 @@
 </script>
 
 <style scoped>
-  .title span{
-    color: #fff;
-    font-family: PingFang SC;
-    font-size: 40px;
-  }
   .friends {
+    color: #fff;
     position: fixed;
     top: 65px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 999;
   }
   .more{
+    color: #fff;
     position: fixed;
     top: 65px;
     right: 25px;
     text-align: right;
+    z-index: 999;
   }
   .main{
     width: 100%;
