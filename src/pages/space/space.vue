@@ -105,6 +105,7 @@
     height: 200px;
     position: absolute;
     top: 230px;
+    bottom: 120px;
     background-color: #F9FAFC;
   }
   .main img{

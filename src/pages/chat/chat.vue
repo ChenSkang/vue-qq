@@ -88,9 +88,9 @@
     methods: {
       sendMessage () {
         let div = document.getElementsByClassName('main')
+        div[0].scrollTop = div[0].scrollHeight
         this.messages.push(this.nowmessage)
         this.nowmessage = ''
-        div[0].scrollTop = div[0].scrollHeight
       }
     },
     mounted () {
@@ -171,7 +171,7 @@
   .main{
     width: 100%;
     position: absolute;
-    top: 160px;
+    top: 150px;
     bottom: 160px;
     overflow-y: auto;
   }
