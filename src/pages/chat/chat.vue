@@ -34,24 +34,73 @@
         <img src="../../img/arrowleft.png" class="arrowleft" />
       </div>
     </router-link>
+    <img src="../../img/phone.png" class="phone" />
+    <img src="../../img/chatren.png" class="chat" />
+  </div>
+  <div class="main">
+    <ul>
+      <li v-for="(message, index) in messages">
+        <div class="message"><p>{{message}}</p></div>
+        <div class="head"><img src="../../img/qqhead.jpg" style="width: 75px;height: 75px"/></div>
+      </li>
+    </ul>
+  </div>
+  <div class="footer">
+    <el-row :gutter="10" class="send-message">
+      <el-col :span="20"><div><input class="message-input" v-model="nowmessage" @keyup.enter="sendMessage"></div></el-col>
+      <el-col :span="4"><div><el-button class="message-btn" type="primary" :disabled="ifmessages" @click="sendMessage">发送</el-button></div></el-col>
+    </el-row>
+    <el-row class="send-colors">
+      <el-col :span="3"><img src="../../img/yuyin.png" /></el-col>
+      <el-col :span="3"><img src="../../img/imgs.png" /></el-col>
+      <el-col :span="3"><img src="../../img/xiangji.png" /></el-col>
+      <el-col :span="3"><img src="../../img/chuo.png" /></el-col>
+      <el-col :span="3"><img src="../../img/hongbao.png" /></el-col>
+      <el-col :span="3"><img src="../../img/gif.png" /></el-col>
+      <el-col :span="3"><img src="../../img/biaoqing.png" /></el-col>
+      <el-col :span="3"><img src="../../img/tianjia.png" /></el-col>
+    </el-row>
   </div>
 </div>
 </template>
 
 <script>
   import bus from '../../assets/bus'
+  import ElButton from '../../../node_modules/element-ui/packages/button/src/button'
   export default {
+    components: {ElButton},
     data () {
       return {
-        username: ''
+        username: '',
+        nowmessage: '',
+        messages: []
+      }
+    },
+    computed: {
+      ifmessages: function () {
+        if (this.nowmessage) {
+          return false
+        } else {
+          return true
+        }
+      }
+    },
+    methods: {
+      sendMessage () {
+        let div = document.getElementsByClassName('main')
+        this.messages.push(this.nowmessage)
+        this.nowmessage = ''
+        div[0].scrollTop = div[0].scrollHeight
       }
     },
     mounted () {
       bus.$on('looks', (imgSrc, title, style) => {
         this.username = title
+        this.messages = []
       })
       bus.$on('lookss', (imgSrcs, titles, styles) => {
         this.username = titles
+        this.messages = []
       })
     }
   }
@@ -64,6 +113,7 @@
     height: 150px;
     position: fixed;
     top: 0;
+    z-index: 999;
   }
   .user-name{
     color: #fff;
@@ -77,7 +127,82 @@
   }
   .arrow{
     position: absolute;
-    top: 65px;
+    top: 60px;
     left: 25px;
+  }
+  .phone{
+    position: absolute;
+    top: 65px;
+    right: 120px;
+  }
+  .chat{
+    position: absolute;
+    top: 65px;
+    right: 25px;
+  }
+  .footer{
+    width: 100%;
+    height: 150px;
+    position: fixed;
+    bottom: 0;
+    background-color: #E5E9F2;
+  }
+  .send-message{
+    height: 75px;
+  }
+  .message-input{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 96%;
+    height: 60px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+  }
+  .message-btn{
+    margin-top: 10px;
+    height: 65px;
+    width: 90%;
+    border: 1px solid #fff;
+    border-radius: 10px;
+  }
+  .send-colors img{
+    margin: 15px;
+  }
+  .main{
+    width: 100%;
+    position: absolute;
+    top: 160px;
+    bottom: 160px;
+    overflow-y: auto;
+  }
+  .main li{
+    position: relative;
+    height: 120px;
+    line-height: 120px;
+  }
+  .head{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .message{
+    height: 90px;
+    line-height: 90px;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #1c8de0;
+    position: absolute;
+    right: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .message p{
+    margin: 20px;
+    transform: translateY(-20px);
   }
 </style>
