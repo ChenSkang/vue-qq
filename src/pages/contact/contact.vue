@@ -30,7 +30,9 @@
   <footers></footers>
   <div class="title">
     <span class="friends">联系人</span>
-    <span class="add">添加</span>
+    <router-link to="/addfriend">
+      <span class="add">添加</span>
+    </router-link>
   </div>
   <div class="contact">
     <router-link to="/newfriend">

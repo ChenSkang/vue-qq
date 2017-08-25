@@ -33,7 +33,9 @@
       <p id="dyna">联系人</p>
     </router-link>
     <span class="new">新朋友</span>
-    <span class="add">添加</span>
+    <router-link to="/addfriend">
+      <span class="add">添加</span>
+    </router-link>
   </div>
 </div>
 </template>

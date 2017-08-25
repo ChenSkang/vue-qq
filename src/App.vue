@@ -22,5 +22,6 @@ export default {
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  width: 100%;
 }
 </style>

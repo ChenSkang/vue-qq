@@ -8,6 +8,7 @@ import More from '@/pages/space/more'
 import Chat from '@/pages/chat/chat'
 import User from '@/pages/users/users'
 import Newfriend from '@/pages/newfriends/newfriends'
+import Addfriend from '@/pages/addfriends/addfriends'
 
 Vue.use(Router)
 
@@ -44,6 +45,10 @@ export default new Router({
     {
       path: '/newfriend',
       component: Newfriend
+    },
+    {
+      path: '/addfriend',
+      component: Addfriend
     }
   ]
 })
