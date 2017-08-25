@@ -75,7 +75,7 @@
           img: require('../../img/sport.png')
         }, {
           title: '音乐',
-          img: require('../../img/seedian.png')
+          img: require('../../img/music.png')
         }]
       }
     }
