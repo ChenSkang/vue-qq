@@ -32,17 +32,29 @@
   <el-row>
     <el-col :span="8">
       <router-link to="/message">
-        <div class="foot-icons" @click="changeWindow(0)"><img :src="messageImg[num[0].number].imgSrcOne"/><p>消息</p></div>
+        <div class="foot-icons">
+          <img src="../img/message.png"/>
+          <img src="../img/messageblue.png" class="img2"/>
+          <p>消息</p>
+        </div>
       </router-link>
     </el-col>
     <el-col :span="8">
       <router-link to="/contact">
-        <div class="foot-icons" @click="changeWindow(1)"><img :src="messageImg[num[1].number].imgSrcTwo"/><p>联系人</p></div>
+        <div class="foot-icons">
+          <img src="../img/friend.png"/>
+          <img src="../img/friendblue.png" class="img2"/>
+          <p>联系人</p>
+        </div>
       </router-link>
     </el-col>
     <el-col :span="8">
       <router-link to="/space">
-        <div class="foot-icons" @click="changeWindow(2)"><img :src="messageImg[num[2].number].imgSrcThree"/><p>动态</p></div>
+        <div class="foot-icons">
+          <img src="../img/star.png"/>
+          <img src="../img/starblue.png" class="img2"/>
+          <p>动态</p>
+        </div>
       </router-link>
     </el-col>
   </el-row>
@@ -59,29 +71,12 @@
     data () {
       return {
         num: [{
-          number: 1
+          number: false
         }, {
-          number: 0
+          number: false
         }, {
-          number: 0
-        }],
-        messageImg: [{
-          imgSrcOne: require('../img/message.png'),
-          imgSrcTwo: require('../img/friend.png'),
-          imgSrcThree: require('../img/star.png')
-        }, {
-          imgSrcOne: require('../img/messageblue.png'),
-          imgSrcTwo: require('../img/friendblue.png'),
-          imgSrcThree: require('../img/starblue.png')
+          number: false
         }]
-      }
-    },
-    methods: {
-      changeWindow (x) {
-        for (let i = 0; i < 3; i++) {
-          this.num[i].number = 0
-        }
-        this.num[x].number = 1
       }
     }
   }
@@ -105,5 +100,8 @@
   .foot-icons p{
     color: #8a8a8a;
     font-size: 20px;
+  }
+  .img2{
+    display: none;
   }
 </style>
