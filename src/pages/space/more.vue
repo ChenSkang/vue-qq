@@ -38,10 +38,21 @@
     </div>
     <div class="objects">
       <ul>
-        <li style="background-color: #F9FAFC"><span class="list-title">已关闭的功能</span></li>
+        <div class="list-title" :class="{ifshow:!values.length}">已关闭的功能</div>
+        <div class="list-title" :class="{ifshow:values.length}">功能已全部开启</div>
         <li v-for="(value, index) in values">
           <img :src="values[index].img" class="imgname" />
           <p class="names">{{values[index].title}}</p>
+          <el-button class="objects-btn" @click="open(index)">开启</el-button>
+        </li>
+      </ul>
+      <ul>
+        <div class="list-title" :class="{ifshow:!othervalues.length}">已开启的功能</div>
+        <div class="list-title" :class="{ifshow:othervalues.length}">功能已全部关闭</div>
+        <li v-for="(value, index) in othervalues">
+          <img :src="othervalues[index].img" class="imgname" />
+          <p class="names">{{othervalues[index].title}}</p>
+          <el-button class="objects-btn" @click="close(index)">关闭</el-button>
         </li>
       </ul>
     </div>
@@ -65,9 +76,6 @@
           title: '阅读',
           img: require('../../img/read.png')
         }, {
-          title: '动漫',
-          img: require('../../img/dongman.png')
-        }, {
           title: '直播',
           img: require('../../img/zhibo.png')
         }, {
@@ -76,7 +84,23 @@
         }, {
           title: '同城服务',
           img: require('../../img/cityfuwu.png')
+        }],
+        othervalues: [{
+          title: '运动',
+          img: require('../../img/sport.png')
+        }, {
+          title: '音乐',
+          img: require('../../img/music.png')
         }]
+      }
+    },
+    methods: {
+      open (num) {
+        this.values.splice(num, 1)
+        let value = []
+        this.othervalues.unshift(value)
+        this.othervalues[0].title = this.values[num].title
+        this.othervalues[0].img = this.values[num].img
       }
     }
   }
@@ -89,6 +113,7 @@
     height: 150px;
     position: fixed;
     top: 0;
+    z-index: 999;
   }
   .arrowleft{
     position: absolute;
@@ -115,12 +140,22 @@
   .objects li{
     border-bottom: 1px solid #D3DCE6;
     height: 100px;
+    position: relative;
     line-height: 100px;
   }
+  .objects-btn{
+    position: absolute;
+    right: 25px;
+    top: 20px;
+  }
   .list-title{
+    width: 100%;
+    border-bottom: 1px solid #D3DCE6;
+    height: 100px;
+    line-height: 100px;
+    background-color: #F9FAFC;
     color: #8492A6;
     font-size: 30px;
-    margin-left: 25px;
   }
   .imgname{
     margin-left: 25px;
@@ -129,5 +164,8 @@
   }
   .names{
     display: inline-block;
+  }
+  .ifshow{
+    display: none;
   }
 </style>

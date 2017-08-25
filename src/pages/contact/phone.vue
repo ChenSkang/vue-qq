@@ -28,15 +28,15 @@
 <template>
 <div>
   <div class="my">
-    <img src="../../img/computer.png" class="add"/><p>我的电脑</p>
+    <img src="../../img/computer.png"/><p>我的电脑</p>
     <p class="intro">无需数据线，手机轻松传文件。</p>
   </div>
   <div class="my">
-    <img src="../../img/dayinji.png" class="add"/><p>我的打印机</p>
+    <img src="../../img/dayinji.png"/><p>我的打印机</p>
     <p class="intro">将文件发送到电脑连接的打印机。</p>
   </div>
   <div class="my">
-    <img src="../../img/newshebei.png" class="add"/><p>发现新设备</p>
+    <img src="../../img/newshebei.png"/><p>发现新设备</p>
     <p class="intro">搜索附近的设备，用QQ轻松连接设备。</p>
   </div>
 </div>
@@ -64,7 +64,6 @@
   .my img{
     transform: translateY(25px);
     margin-left: 25px;
-    margin-right: 25px;
   }
   .intro{
     font-size: 25px;
