@@ -89,8 +89,10 @@
       sendMessage () {
         let div = document.getElementsByClassName('main')
         div[0].scrollTop = div[0].scrollHeight
-        this.messages.push(this.nowmessage)
-        this.nowmessage = ''
+        if (this.nowmessage) {
+          this.messages.push(this.nowmessage)
+          this.nowmessage = ''
+        }
       }
     },
     mounted () {
@@ -179,6 +181,7 @@
     position: relative;
     height: 120px;
     line-height: 120px;
+    margin-bottom: 20px;
   }
   .head{
     width: 75px;
@@ -191,6 +194,7 @@
     transform: translateY(-50%);
   }
   .message{
+    min-width: 80px;
     height: 90px;
     line-height: 90px;
     border-radius: 20px;

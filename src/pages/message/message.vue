@@ -85,6 +85,18 @@
         this.values[0].title = title
         this.values[0].style = style
       })
+      bus.$on('lookss', (imgSrc, title, style) => {
+        for (let x = 0; x < this.values.length; x++) {
+          if (this.values[x].title === title) {
+            this.values.splice(x, 1)
+          }
+        }
+        let value = []
+        this.values.unshift(value)
+        this.values[0].img = imgSrc
+        this.values[0].title = title
+        this.values[0].style = style
+      })
     },
     methods: {
     }
