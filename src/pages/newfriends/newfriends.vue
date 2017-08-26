@@ -37,6 +37,35 @@
       <span class="add">添加</span>
     </router-link>
   </div>
+  <div id="main">
+    <div class="my-title">好友推荐</div>
+    <div class="my">
+      <img src="../../img/headone.jpg" class="head-img"/><p>气球男生</p>
+      <p class="intro">我手里拿的是龙猫</p>
+      <el-button class="objects-btn">添加</el-button>
+    </div>
+    <div class="my">
+      <img src="../../img/headthree.jpg" class="head-img"/><p>气球女生</p>
+      <p class="intro">我手里拿的不是龙猫</p>
+      <el-button class="objects-btn">添加</el-button>
+    </div>
+    <div class="my">
+      <img src="../../img/headtwo.jpg" class="head-img"/><p>猫女生</p>
+      <p class="intro">我抱着小猫</p>
+      <el-button class="objects-btn">添加</el-button>
+    </div>
+    <div class="my">
+      <img src="../../img/headfour.jpg" class="head-img"/><p>猫男生</p>
+      <p class="intro">我头顶着小猫</p>
+      <el-button class="objects-btn">添加</el-button>
+    </div>
+    <div class="my">
+      <img src="../../img/headfive.jpg" class="head-img"/><p>小孩子</p>
+      <p class="intro">嘿，可爱吧hhhh</p>
+      <el-button class="objects-btn">添加</el-button>
+    </div>
+    <div class="my-title" style="text-align: center;">查看更多推荐好友＞</div>
+  </div>
 </div>
 </template>
 
@@ -81,5 +110,43 @@
     position: fixed;
     top: 65px;
     margin-left: 60px;
+  }
+  #main{
+    width: 100%;
+    position: absolute;
+    top: 150px;
+  }
+  .my{
+    position: relative;
+    height: 150px;
+    border-bottom: 1px solid #8492A6;
+  }
+  .my p{
+    margin-left: 150px;
+    transform: translateY(30px);
+  }
+  .head-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .my-title{
+    font-size: 35px;
+    color: #8492A6;
+    margin: 25px;
+  }
+  .intro{
+    font-size: 30px;
+    color: #8492A6;
+  }
+  .objects-btn{
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 </style>
