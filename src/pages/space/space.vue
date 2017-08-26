@@ -28,21 +28,27 @@
 <template>
 <div>
   <footers></footers>
-  <div class="title"><span class="friends">动态</span></div>
-  <router-link to="/more"><div class="title"><span class="more">更多</span></div></router-link>
+  <div class="friends">动态</div>
+  <router-link to="/more"><div class="more">更多</div></router-link>
   <div class="main">
     <el-row>
       <el-col :span="8">
-        <img src="../../img/qqspaceicon.png" />
-        <p class="names">好友动态</p>
+        <router-link to="circle">
+          <img src="../../img/qqspaceicon.png" />
+          <p class="names">好友动态</p>
+        </router-link>
       </el-col>
       <el-col :span="8">
-        <img src="../../img/there.png" id="there" />
-        <p class="names" style="transform: translateY(25px)">附近</p>
+        <router-link to="/nearby">
+          <img src="../../img/there.png" id="there" />
+          <p class="names" style="transform: translateY(25px)">附近</p>
+        </router-link>
       </el-col>
       <el-col :span="8">
-        <img src="../../img/hobby.png" />
-        <p class="names">兴趣部落</p>
+        <router-link to="/hobby">
+          <img src="../../img/hobby.png" />
+          <p class="names">兴趣部落</p>
+        </router-link>
       </el-col>
     </el-row>
   </div>
@@ -63,6 +69,7 @@
 </template>
 
 <script>
+  import bus from '../../assets/bus'
   import footers from '../../components/footer.vue'
   export default {
     components: {
@@ -78,6 +85,21 @@
           img: require('../../img/music.png')
         }]
       }
+    },
+    mounted () {
+      bus.$on('opens', (title, img) => {
+        let value = []
+        this.values.unshift(value)
+        this.values[0].title = title
+        this.values[0].img = img
+      })
+      bus.$on('closed', (title, img) => {
+        for (let x = 0; x < this.values.length; x++) {
+          if (this.values[x].title === title) {
+            this.values.splice(x, 1)
+          }
+        }
+      })
     }
   }
 </script>
@@ -120,6 +142,7 @@
   }
   .names{
     font-size: 30px;
+    color: black;
   }
   .game{
     position: relative;
