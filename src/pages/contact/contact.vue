@@ -102,21 +102,17 @@
 <style scoped>
   .title span{
     color: #fff;
-    font-family: PingFang SC;
-    font-size: 40px;
-    width: 100%;
     z-index: 999;
+    position: fixed;
   }
   .friends{
-    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
     top: 65px;
-    text-align: center;
   }
   .add{
-    position: fixed;
     top: 65px;
     right: 25px;
-    text-align: right;
   }
   .contact{
     position: relative;
