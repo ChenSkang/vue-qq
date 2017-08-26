@@ -115,9 +115,12 @@
     right: 20px;
     border: 1px solid #8a8a8a;
     border-radius: 10px;
+    z-index: 999;
   }
   .functions li{
     margin: 20px 0 30px 25px;
+    font-size: 35px;
+    color: black;
   }
   .messages{
     width: 100%;

@@ -29,32 +29,32 @@
 <div class="main">
   <div class="heart" style="position: relative;">
     <p @click="showone = !showone"><img src="../../img/arrow.png" class="arrow" v-bind:class="{open:showone}"/><span>特别关心</span></p>
-    <span class="peoples">{{vipusers.length}}</span>
+    <span class="peoples">{{vipusers.length}}/{{vipusers.length}}</span>
   </div>
   <div class="users" v-if="showone">
     <ul>
       <router-link to="/user">
         <li v-for="(user, index) in vipusers" @click="lookr(index)">
           <img :src="users[index].userhead" class="userhead" />
-          <p class="username">{{vipusers[index].username}}</p>
-          <p class="styles">{{vipusers[index].styles}}</p>
+          <p>{{vipusers[index].username}}</p>
+          <p id="styles">{{vipusers[index].styles}}</p>
         </li>
       </router-link>
     </ul>
   </div>
   <div class="people" style="position: relative;margin-top: 20px">
     <p @click="showtwo = !showtwo"><img src="../../img/arrow.png"  class="arrow" v-bind:class="{open:showtwo}"/><span>我的好友</span></p>
-    <span class="peoples">{{users.length}}</span>
+    <span class="peoples">{{users.length}}/{{users.length}}</span>
   </div>
   <div class="users" v-if="showtwo">
     <ul>
-      <router-link to="/user">
         <li v-for="(user, index) in users" @click="look(index)">
-          <img :src="users[index].userhead" class="userhead" />
-          <p class="username">{{users[index].username}}</p>
-          <p class="styles">{{users[index].styles}}</p>
+          <router-link to="/user">
+            <img :src="users[index].userhead" class="userhead" />
+            <p>{{users[index].username}}</p>
+            <p id="styles">{{users[index].styles}}</p>
+          </router-link>
         </li>
-      </router-link>
     </ul>
   </div>
 </div>
@@ -130,8 +130,9 @@
     line-height: 100px;
   }
   .peoples{
+    font-size: 30px;
     position: absolute;
-    top: 25px;
+    top: 35px;
     right: 50px;
     color: #8492A6;
   }
@@ -141,7 +142,6 @@
   .users li{
     border-bottom: 1px solid #D3DCE6;
     height: 100px;
-    color: black;
   }
   .userhead{
     transform: translateY(20px);
@@ -152,9 +152,10 @@
   }
   .users p{
     margin-left: 120px;
+    color: black;
     transform: translateY(-75px);
   }
-  .styles{
+  #styles{
     font-size: 25px;
     color: #8492A6;
   }
