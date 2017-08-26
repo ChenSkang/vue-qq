@@ -34,13 +34,13 @@
   </div>
   <div class="functions" v-if="showfunction">
     <ul>
-      <li>创建群聊</li>
-      <li>加好友/群</li>
-      <li>扫一扫</li>
-      <li>面对面快传</li>
-      <li>付款</li>
-      <li>拍摄</li>
-      <li>面对面红包</li>
+      <li><img src="../../img/setgroup.png" />创建群聊</li>
+      <router-link to="/addfriend"><li><img src="../../img/addhaoyou.png" />加好友/群</li></router-link>
+      <li><img src="../../img/saoyisaoa.png" />扫一扫</li>
+      <li><img src="../../img/facetoface.png" />面对面快传</li>
+      <li><img src="../../img/payfor.png" />付款</li>
+      <li><img src="../../img/paishe.png" />拍摄</li>
+      <li><img src="../../img/facehongbao.png" />面对面红包</li>
     </ul>
   </div>
   <div class="messages">
@@ -121,6 +121,10 @@
     margin: 20px 0 30px 25px;
     font-size: 35px;
     color: black;
+  }
+  .functions img{
+    margin-right: 20px;
+    transform: translateY(10px);
   }
   .messages{
     width: 100%;
