@@ -9,6 +9,9 @@ import Chat from '@/pages/chat/chat'
 import User from '@/pages/users/users'
 import Newfriend from '@/pages/newfriends/newfriends'
 import Addfriend from '@/pages/addfriends/addfriends'
+import Circle from '@/pages/space/circle'
+import Nearby from '@/pages/space/nearby'
+import Hobby from '@/pages/space/hobby'
 
 Vue.use(Router)
 
@@ -49,6 +52,18 @@ export default new Router({
     {
       path: '/addfriend',
       component: Addfriend
+    },
+    {
+      path: '/circle',
+      component: Circle
+    },
+    {
+      path: '/nearby',
+      component: Nearby
+    },
+    {
+      path: '/hobby',
+      component: Hobby
     }
   ]
 })
