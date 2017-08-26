@@ -60,6 +60,7 @@
 </template>
 
 <script>
+  import bus from '../../assets/bus'
   export default {
     data () {
       return {
@@ -96,11 +97,24 @@
     },
     methods: {
       open (num) {
-        this.values.splice(num, 1)
         let value = []
         this.othervalues.unshift(value)
+        let title = this.values[num].title
+        let img = this.values[num].img
         this.othervalues[0].title = this.values[num].title
         this.othervalues[0].img = this.values[num].img
+        this.values.splice(num, 1)
+        bus.$emit('opens', title, img)
+      },
+      close (num) {
+        let value = []
+        this.values.unshift(value)
+        let title = this.othervalues[num].title
+        let img = this.othervalues[num].img
+        this.values[0].title = this.othervalues[num].title
+        this.values[0].img = this.othervalues[num].img
+        this.othervalues.splice(num, 1)
+        bus.$emit('closed', title, img)
       }
     }
   }
