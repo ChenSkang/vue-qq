@@ -53,8 +53,14 @@
     </el-row>
   </div>
   <div class="game">
-    <p id="mygame"><img src="../../img/game.png" />游戏</p>
-    <img src="../../img/arrow.png" class="arrow" />
+    <div>
+      <p class="mygame"><img src="../../img/game.png" />游戏</p>
+      <img src="../../img/arrow.png" class="arrow" />
+    </div>
+    <div>
+      <p class="mygame"><img src="../../img/dongman.png" />动漫</p>
+      <img src="../../img/arrow.png" class="arrow" />
+    </div>
   </div>
   <div class="sports">
     <ul>
@@ -145,15 +151,19 @@
     color: black;
   }
   .game{
-    position: relative;
+    position: absolute;
     top: 460px;
-    height: 100px;
     width: 100%;
-    background-color: #F9FAFC;
     border-top: 1px solid #D3DCE6;
+  }
+  .game div{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: #F9FAFC;
     border-bottom: 1px solid #D3DCE6;
   }
-  #mygame{
+  .mygame{
     margin-left: 30px;
   }
   .game img{
@@ -169,7 +179,7 @@
   }
   .sports{
     position: absolute;
-    top: 600px;
+    top: 700px;
     width: 100%;
     border-top: 1px solid #C0CCDA;
   }
