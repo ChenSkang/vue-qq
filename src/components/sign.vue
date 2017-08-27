@@ -30,8 +30,8 @@
     <img src="../img/backimg.jpg" class="back"/>
     <p class="logo"><img src="../img/qqicon.png" /><span>QQ</span></p>
     <div class="signin">
-      <input type="text" id="account">
-      <input type="text" id="password">
+      <input type="text" id="account" v-model="account">
+      <input type="text" id="password" v-model="password">
       <router-link to="/message"><el-button type="primary" class="sign-btn">登录</el-button></router-link>
       <span class="forgetpw">忘记密码?</span>
       <span class="newaccount">新用户注册</span>
@@ -45,7 +45,8 @@ export default {
   name: 'sign',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      account: '1981856494',
+      password: '* * * * * * * *'
     }
   }
 }
@@ -80,10 +81,11 @@ export default {
    }
   .signin input{
     background: none;
+    color: #fff;
     width: 100%;
     height: 90px;
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 2px solid #fff;
   }
   .sign-btn{
     width: 100%;
