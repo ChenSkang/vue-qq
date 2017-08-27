@@ -46,7 +46,12 @@
         <li><img src="../../img/xiangce.png" />我的相册</li>
         <li><img src="../../img/wenjian.png" />我的文件</li>
         <li><img src="../../img/mingpian.png" />我的名片夹</li>
+        <li><img src="../../img/setup.png" />设置</li>
       </ul>
+      <div class="weather">
+        <p class="temperature">17°</p>
+        <p class="city">保定市</p>
+      </div>
     </div>
   </div>
 </template>
@@ -112,5 +117,17 @@
     margin-left: 50px;
     margin-right: 20px;
     transform: translateY(10px);
+  }
+  .weather{
+    position: absolute;
+    bottom: 20px;
+    right: 80px;
+  }
+  .temperature{
+    font-size: 80px;
+    color: #20A0FF;
+  }
+  .city{
+    font-size: 35px;
   }
 </style>
