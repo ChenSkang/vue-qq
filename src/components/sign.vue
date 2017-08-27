@@ -27,6 +27,7 @@
 */
 <template>
   <div class="sign">
+    <img src="../img/backimg.jpg" class="back"/>
     <p class="logo"><img src="../img/qqicon.png" /><span>QQ</span></p>
     <div class="signin">
       <input type="text" id="account">
@@ -53,9 +54,11 @@ export default {
 <style scoped>
   .sign{
     width: 100%;
-    height: 1136px;
-    background-image: url("../img/backimg.jpeg");
-    background-repeat: inherit;
+    height: 100%;
+  }
+  .back{
+    width: 100%;
+    height: 1350px;
   }
   .logo{
     position: absolute;
@@ -91,22 +94,24 @@ export default {
   }
   .forgetpw{
     color: #1d84e0;
-    font-size: 25px;
+    font-size: 30px;
   }
   .newaccount{
     color: #1d84e0;
-    font-size: 25px;
+    font-size: 30px;
     position: absolute;
     right: 0;
   }
   .promise{
     width: 100%;
+    color: white;
     text-align: center;
     position: absolute;
     bottom: 8%;
-    font-size: 25px;
+    font-size: 35px;
   }
   .promise span{
     color: #1d84e0;
+    font-size: 35px;
   }
 </style>
