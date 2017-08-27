@@ -46,7 +46,7 @@
         <li><img src="../../img/xiangce.png" />我的相册</li>
         <li><img src="../../img/wenjian.png" />我的文件</li>
         <li><img src="../../img/mingpian.png" />我的名片夹</li>
-        <li><img src="../../img/setup.png" />设置</li>
+        <router-link to="/setup"><li><img src="../../img/setup.png" />设置</li></router-link>
       </ul>
       <div class="weather">
         <p class="temperature">17°</p>
@@ -112,6 +112,7 @@
   .functions li{
     height: 100px;
     line-height: 100px;
+    color: black;
   }
   .functions li img{
     margin-left: 50px;

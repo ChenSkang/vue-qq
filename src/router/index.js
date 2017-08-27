@@ -16,6 +16,8 @@ import Hobby from '@/pages/space/hobby'
 import Game from '@/pages/game/game'
 import Left from '@/pages/left/left'
 import Erweima from '@/pages/erweima/erweima'
+import Setup from '@/pages/setup/setup'
+import Manage from '@/pages/setup/manage'
 
 Vue.use(Router)
 
@@ -84,6 +86,14 @@ export default new Router({
     {
       path: '/erweima',
       component: Erweima
+    },
+    {
+      path: '/setup',
+      component: Setup
+    },
+    {
+      path: '/manage',
+      component: Manage
     }
   ]
 })
