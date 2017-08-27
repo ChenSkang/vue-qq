@@ -26,7 +26,17 @@
 *     Initial: 2017/08/26       Chen Shuaikang
 */
 <template>
-  <div></div>
+  <div>
+    <router-link to="/space"><div class="return"><img src="../../img/return.png" /></div></router-link>
+    <img src="../../img/buluo.jpg" style="width: 100%" />
+    <ul class="main">
+      <li><img src="../../img/guanzhubuluo.png" class="icons" />关注的部落</li>
+      <li><img src="../../img/fabiao.png" class="icons" />我的发表</li>
+      <li><img src="../../img/pinglun.png" class="icons" />我的评论</li>
+      <li><img src="../../img/liuyan.png" class="icons" />留言消息</li>
+      <li><img src="../../img/xitong.png" class="icons" />系统通知</li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -40,5 +50,19 @@
 </script>
 
 <style scoped>
-
+  .return{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+  }
+  .main li{
+    height: 100px;
+    line-height: 100px;
+    border-bottom: 1px solid gainsboro;
+  }
+  .icons{
+    margin-left: 50px;
+    margin-right: 30px;
+    transform: translateY(10px);
+  }
 </style>
