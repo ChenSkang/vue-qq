@@ -30,7 +30,7 @@
     <div class="title">
       <span class="more">更多</span>
       <router-link to="/space">
-        <div class="friends">
+        <div>
           <img src="../../img/arrowleft.png" class="arrowleft" />
           <p id="dyna">动态</p>
         </div>
