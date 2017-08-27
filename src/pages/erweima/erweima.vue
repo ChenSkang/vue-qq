@@ -29,7 +29,7 @@
   <div>
     <div class="title">
       <span class="more">我的二维码</span>
-        <div  onclick="window.history.go(-1)">
+        <div onclick="window.history.go(-1)">
           <img src="../../img/arrowleft.png" class="arrowleft" />
           <p id="dyna">返回</p>
         </div>
