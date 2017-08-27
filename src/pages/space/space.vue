@@ -54,8 +54,10 @@
   </div>
   <div class="game">
     <div>
-      <p class="mygame"><img src="../../img/game.png" />游戏</p>
-      <img src="../../img/arrow.png" class="arrow" />
+      <router-link to="/game">
+        <p class="mygame"><img src="../../img/game.png" />游戏</p>
+        <img src="../../img/arrow.png" class="arrow" />
+      </router-link>
     </div>
     <div>
       <p class="mygame"><img src="../../img/dongman.png" />动漫</p>
@@ -165,6 +167,7 @@
   }
   .mygame{
     margin-left: 30px;
+    color: black;
   }
   .game img{
     transform: translateY(20px);
