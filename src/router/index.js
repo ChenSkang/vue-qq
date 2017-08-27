@@ -7,11 +7,15 @@ import Space from '@/pages/space/space'
 import More from '@/pages/space/more'
 import Chat from '@/pages/chat/chat'
 import User from '@/pages/users/users'
+import Myself from '@/pages/users/myself'
 import Newfriend from '@/pages/newfriends/newfriends'
 import Addfriend from '@/pages/addfriends/addfriends'
 import Circle from '@/pages/space/circle'
 import Nearby from '@/pages/space/nearby'
 import Hobby from '@/pages/space/hobby'
+import Game from '@/pages/game/game'
+import Left from '@/pages/left/left'
+import Erweima from '@/pages/erweima/erweima'
 
 Vue.use(Router)
 
@@ -46,6 +50,10 @@ export default new Router({
       component: User
     },
     {
+      path: '/myself',
+      component: Myself
+    },
+    {
       path: '/newfriend',
       component: Newfriend
     },
@@ -64,6 +72,18 @@ export default new Router({
     {
       path: '/hobby',
       component: Hobby
+    },
+    {
+      path: '/game',
+      component: Game
+    },
+    {
+      path: '/left',
+      component: Left
+    },
+    {
+      path: '/erweima',
+      component: Erweima
     }
   ]
 })

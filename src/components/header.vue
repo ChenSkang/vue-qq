@@ -27,7 +27,7 @@
 */
 <template>
 <div class="head">
-  <div class="account"><img src="../img/qqhead.jpg" /></div>
+  <router-link to="/left"><div class="account"><img src="../img/qqhead.jpg" /></div></router-link>
   <div class="search">
     <span class="search-icon"><i class="el-icon-search" style="margin-top: 5px"></i>搜索</span>
   </div>
