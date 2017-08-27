@@ -36,9 +36,9 @@
     <ul>
       <li><img src="../../img/setgroup.png" />创建群聊</li>
       <router-link to="/addfriend"><li><img src="../../img/addhaoyou.png" />加好友/群</li></router-link>
-      <li><img src="../../img/saoyisaoa.png" />扫一扫</li>
+      <router-link to="/erweima"><li><img src="../../img/saoyisaoa.png" />扫一扫</li></router-link>
       <li><img src="../../img/facetoface.png" />面对面快传</li>
-      <li><img src="../../img/payfor.png" />付款</li>
+      <router-link to="/erweima"><li><img src="../../img/payfor.png" />付款</li></router-link>
       <li><img src="../../img/paishe.png" />拍摄</li>
       <li><img src="../../img/facehongbao.png" />面对面红包</li>
     </ul>
