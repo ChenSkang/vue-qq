@@ -33,7 +33,7 @@
     <span class="actions" @click="showfunction = !showfunction"><img src="../../img/add.png" /></span>
   </div>
   <div class="functions" v-if="showfunction">
-    <ul>
+    <ul @click="hide">
       <li><img src="../../img/setgroup.png" />创建群聊</li>
       <router-link to="/addfriend"><li><img src="../../img/addhaoyou.png" />加好友/群</li></router-link>
       <router-link to="/erweima"><li><img src="../../img/saoyisaoa.png" />扫一扫</li></router-link>
@@ -43,7 +43,7 @@
       <li><img src="../../img/facehongbao.png" />面对面红包</li>
     </ul>
   </div>
-  <div class="messages">
+  <div class="messages" @click="hide">
     <ul>
       <li v-for="(value, index) in values" :key="index">
         <img :src="values[index].img" class="imgname" />
@@ -99,6 +99,11 @@
       })
     },
     methods: {
+      hide () {
+        if (this.showfunction === true) {
+          this.showfunction = false
+        }
+      }
     }
   }
 </script>
