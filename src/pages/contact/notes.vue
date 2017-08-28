@@ -26,7 +26,9 @@
 *     Initial: 2017/08/22       Chen Shuaikang
 */
 <template>
-    <div></div>
+  <div>
+    <p id="note">没有通讯录好友</p>
+  </div>
 </template>
 
 <script>
@@ -40,5 +42,7 @@
 </script>
 
 <style scoped>
-
+#note{
+  margin: 30%;
+}
 </style>
