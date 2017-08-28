@@ -18,6 +18,9 @@ import Left from '@/pages/left/left'
 import Erweima from '@/pages/erweima/erweima'
 import Setup from '@/pages/setup/setup'
 import Manage from '@/pages/setup/manage'
+import File from '@/pages/files/files'
+import Setgroup from '@/pages/setgroup/setgroup'
+import Groups from '@/pages/setgroup/groups'
 
 Vue.use(Router)
 
@@ -94,6 +97,18 @@ export default new Router({
     {
       path: '/manage',
       component: Manage
+    },
+    {
+      path: '/file',
+      component: File
+    },
+    {
+      path: '/setgroup',
+      component: Setgroup
+    },
+    {
+      path: '/groups',
+      component: Groups
     }
   ]
 })

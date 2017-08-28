@@ -104,6 +104,10 @@
         this.username = titles
         this.messages = []
       })
+      bus.$on('group', (title) => {
+        this.username = title
+        this.messages = []
+      })
     }
   }
 </script>
