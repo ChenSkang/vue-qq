@@ -34,10 +34,10 @@
   </div>
   <div class="functions" v-if="showfunction">
     <ul @click="hide">
-      <li><img src="../../img/setgroup.png" />创建群聊</li>
+      <router-link to="/setgroup"> <li><img src="../../img/setgroup.png" />创建群聊</li></router-link>
       <router-link to="/addfriend"><li><img src="../../img/addhaoyou.png" />加好友/群</li></router-link>
       <router-link to="/erweima"><li><img src="../../img/saoyisaoa.png" />扫一扫</li></router-link>
-      <li><img src="../../img/facetoface.png" />面对面快传</li>
+      <router-link to="/file"><li><img src="../../img/facetoface.png" />快传文件</li></router-link>
       <router-link to="/erweima"><li><img src="../../img/payfor.png" />付款</li></router-link>
       <li><img src="../../img/paishe.png" />拍摄</li>
       <li><img src="../../img/facehongbao.png" />面对面红包</li>
@@ -96,6 +96,17 @@
         this.values[0].img = imgSrc
         this.values[0].title = title
         this.values[0].style = style
+      })
+      bus.$on('group', (title) => {
+        for (let x = 0; x < this.values.length; x++) {
+          if (this.values[x].title === title) {
+            this.values.splice(x, 1)
+          }
+        }
+        let value = []
+        this.values.unshift(value)
+        this.values[0].img = require('../../img/qunliao.png')
+        this.values[0].title = title
       })
     },
     methods: {

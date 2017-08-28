@@ -44,7 +44,9 @@
         <li><img src="../../img/gexingzhuangban.png" />个性装扮</li>
         <li><img src="../../img/shoucang.png" />我的收藏</li>
         <li><img src="../../img/xiangce.png" />我的相册</li>
-        <li><img src="../../img/wenjian.png" />我的文件</li>
+        <router-link to="/file">
+          <li><img src="../../img/wenjian.png" />我的文件</li>
+        </router-link>
         <li><img src="../../img/mingpian.png" />我的名片夹</li>
         <router-link to="/setup"><li><img src="../../img/setup.png" />设置</li></router-link>
       </ul>
