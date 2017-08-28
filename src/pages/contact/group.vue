@@ -28,13 +28,23 @@
 <template>
   <div class="main">
     <div class="pone">
-      <p><img src="../../img/adds.png" class="add"/>创建群</p>
+      <router-link to="/setgroup"><p><img src="../../img/adds.png" class="add"/>创建群</p></router-link>
     </div>
     <div class="ptwo super">
       <p><img src="../../img/groupzhu.png" class="add"/>超级群主</p>
     </div>
     <div class="pone">
       <p @click="showone = !showone"><img src="../../img/arrow.png" class="arrow" v-bind:class="{open:showone}"/><span>我创建的群</span></p>
+    </div>
+    <div class="users" v-if="showone">
+      <ul>
+        <li v-for="(user, index) in users" @click="look(index)">
+          <router-link to="/chat">
+            <img src="../../img/qunliao.png" class="userhead" />
+            <p>{{users[index]}}</p>
+          </router-link>
+        </li>
+      </ul>
     </div>
     <div class="ptwo">
       <p @click="showtwo = !showtwo"><img src="../../img/arrow.png"  class="arrow" v-bind:class="{open:showtwo}"/><span>我管理的群</span></p>
@@ -46,13 +56,28 @@
 </template>
 
 <script>
+  import bus from '../../assets/bus'
   export default {
     data () {
       return {
         showone: false,
         showtwo: false,
-        showthree: false
+        showthree: false,
+        users: [
+          '我的群聊'
+        ]
       }
+    },
+    methods: {
+      look (index) {
+        let title = this.users[index]
+        bus.$emit('group', title)
+      }
+    },
+    mounted () {
+      bus.$on('groupName', (name) => {
+        this.users.push(name)
+      })
     }
   }
 </script>
@@ -83,6 +108,7 @@
   margin-left: 25px;
   height: 100px;
   line-height: 100px;
+  color: black;
 }
 .open{
   transform: rotate(90deg);
@@ -92,5 +118,32 @@
   margin-left: 25px;
   height: 100px;
   line-height: 100px;
+}
+.users{
+  width: 100%;
+  margin-bottom: 25px;
+}
+.users li{
+  height: 100px;
+}
+.userhead{
+  transform: translateY(20px);
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.users img{
+  width: 85px;
+  height: 85px;
+}
+.users p{
+  margin-left: 120px;
+  color: black;
+  transform: translateY(-60px);
+}
+#styles{
+  font-size: 25px;
+  color: #8492A6;
 }
 </style>
