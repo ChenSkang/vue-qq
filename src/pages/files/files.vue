@@ -23,13 +23,13 @@
 */
 /**
 * Revision History:
-*     Initial: 2017/08/22       Chen Shuaikang
+*     Initial: 2017/08/27       Chen Shuaikang
 */
 <template>
   <div>
     <div class="title">
-      <span class="more">设置</span>
-      <router-link to="/contact">
+      <span class="more">我的文件</span>
+      <router-link to="/message">
         <div>
           <img src="../../img/arrowleft.png" class="arrowleft" />
           <p id="dyna">返回</p>
@@ -38,19 +38,16 @@
     </div>
     <div class="main">
       <ul>
-        <li>帐号管理</li>
-        <li>手机号码</li>
-        <li>QQ达人</li>
+        <li><img src="../../img/diannao.png" class="head" /><p style="margin-left: 100px">传文件/照片到我的电脑</p><img src="../../img/arrow.png" class="arrow" /></li>
+        <li><img src="../../img/wenjian.png" class="head" /><p style="margin-left: 100px">面对面快传</p><img src="../../img/arrow.png" class="arrow" /></li>
+        <li><img src="../../img/beifen.png" class="head" /><p style="margin-left: 100px">备份相册到微云</p><img src="../../img/arrow.png" class="arrow" /></li>
       </ul>
+      <p id="myfile">我的文件</p>
       <ul>
-        <li>消息通知</li>
-        <li>聊天记录</li>
-        <li>空间清理</li>
-      </ul>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>最近文件<img src="../../img/arrow.png" class="arrow" /></li>
+        <li>本机文件<img src="../../img/arrow.png" class="arrow" /></li>
+        <li>电脑文件<img src="../../img/arrow.png" class="arrow" /></li>
+        <li>微云文件<img src="../../img/arrow.png" class="arrow" /></li>
       </ul>
     </div>
   </div>
@@ -73,7 +70,7 @@
     z-index: 999;
   }
   .arrowleft{
-    position: absolute;
+    position: fixed;
     top: 55px;
   }
   .more {
@@ -88,5 +85,46 @@
     position: fixed;
     top: 65px;
     margin-left: 60px;
+  }
+  .main{
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    background-color: #F9FAFC;
+  }
+  .main ul{
+    margin-top: 45px;
+    border-top: 1px solid #8492A6;
+  }
+  .main li{
+    color: black;
+    height: 100px;
+    background-color: #fff;
+    border-bottom: 1px solid #8492A6;
+    line-height: 100px;
+    text-indent: 20px;
+    position: relative;
+  }
+  .head{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 25px;
+    top: 20px;
+  }
+  .arrow{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+  }
+  #myfile{
+    font-size: 30px;
+    text-indent: 20px;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 5px;
+    margin-bottom: -30px;
   }
 </style>
