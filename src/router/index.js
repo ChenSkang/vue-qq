@@ -21,6 +21,7 @@ import Manage from '@/pages/setup/manage'
 import File from '@/pages/files/files'
 import Setgroup from '@/pages/setgroup/setgroup'
 import Groups from '@/pages/setgroup/groups'
+import Computer from '@/pages/chat/Computer'
 
 Vue.use(Router)
 
@@ -109,6 +110,10 @@ export default new Router({
     {
       path: '/groups',
       component: Groups
+    },
+    {
+      path: '/computer',
+      component: Computer
     }
   ]
 })

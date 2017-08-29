@@ -27,10 +27,12 @@
 */
 <template>
 <div>
-  <div class="my">
-    <img src="../../img/computer.png"/><p>我的电脑</p>
-    <p class="intro">无需数据线，手机轻松传文件。</p>
-  </div>
+  <router-link to="/computer">
+    <div class="my">
+      <img src="../../img/computer.png"/><p>我的电脑</p>
+      <p class="intro">无需数据线，手机轻松传文件。</p>
+    </div>
+  </router-link>
   <div class="my">
     <img src="../../img/dayinji.png"/><p>我的打印机</p>
     <p class="intro">将文件发送到电脑连接的打印机。</p>
@@ -60,6 +62,7 @@
   .my p{
     margin-left: 120px;
     transform: translateY(-70px);
+    color: black;
   }
   .my img{
     transform: translateY(25px);
@@ -67,6 +70,5 @@
   }
   .intro{
     font-size: 25px;
-    color: #8492A6;
   }
 </style>
